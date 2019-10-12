@@ -54,6 +54,7 @@ Button BtnLogin;
                             // get user information
                             mDialog.dismiss();
                             User user = dataSnapshot.child(edtPhone.getText().toString()).getValue(User.class);
+                            user.setPhone(edtPhone.getText().toString());
                             if (user.getPassword().equals(edtPassword.getText().toString())) {
                                Intent HomeIntent = new Intent(Login.this, Home.class);
                                Common.currentUser= user;
